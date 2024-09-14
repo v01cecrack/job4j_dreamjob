@@ -2,19 +2,14 @@ package ru.job4j.dreamjob.model;
 
 import java.time.LocalDateTime;
 
-public class Vacancy {
-
+public class Candidate {
     private int id;
-
-    private String title;
-
+    private String name;
     private String description;
-
     private LocalDateTime creationDate;
 
-    public Vacancy(String title, String description) {
-
-        this.title = title;
+    public Candidate(String name, String description) {
+        this.name = name;
         this.description = description;
         this.creationDate = LocalDateTime.now();
     }
@@ -27,12 +22,12 @@ public class Vacancy {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -50,5 +45,4 @@ public class Vacancy {
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
-
 }
