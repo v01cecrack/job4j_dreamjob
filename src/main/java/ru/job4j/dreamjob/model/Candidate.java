@@ -14,6 +14,17 @@ public class Candidate {
         this.creationDate = creationDate;
     }
 
+    public Candidate(int id, String name, String description, LocalDateTime creationDate) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.creationDate = creationDate;
+    }
+
+    public Candidate() {
+        this.creationDate = LocalDateTime.now();
+    }
+
     public int getId() {
         return id;
     }
