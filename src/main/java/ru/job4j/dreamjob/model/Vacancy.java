@@ -19,6 +19,10 @@ public class Vacancy {
         this.creationDate = creationDate;
     }
 
+    public Vacancy() {
+        this.creationDate = LocalDateTime.now();
+    }
+
     public int getId() {
         return id;
     }
