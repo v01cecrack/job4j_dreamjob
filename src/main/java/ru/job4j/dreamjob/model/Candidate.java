@@ -8,10 +8,10 @@ public class Candidate {
     private String description;
     private LocalDateTime creationDate;
 
-    public Candidate(String name, String description) {
+    public Candidate(String name, String description, LocalDateTime creationDate) {
         this.name = name;
         this.description = description;
-        this.creationDate = LocalDateTime.now();
+        this.creationDate = creationDate;
     }
 
     public int getId() {
