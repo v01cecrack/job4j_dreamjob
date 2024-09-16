@@ -2,7 +2,11 @@ package ru.job4j.dreamjob.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.repository.CandidateRepository;
 
@@ -55,10 +59,9 @@ public class CandidateController {
 
     @GetMapping("/delete/{id}")
     public String delete(Model model, @PathVariable int id) {
-        try {
-            candidateRepository.deleteById(id);
-        } catch (Exception e) {
-            model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
+        var isDeleted = candidateRepository.deleteById(id);
+        if (!isDeleted) {
+            model.addAttribute("message", "Кандидат с указанным идентификатором не найден");
             return "errors/404";
         }
         return "redirect:/candidates";
