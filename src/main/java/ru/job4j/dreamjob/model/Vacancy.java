@@ -16,20 +16,26 @@ public class Vacancy {
 
     private int cityId;
 
-    public Vacancy(String title, String description, LocalDateTime creationDate) {
+    private int fileId;
+
+    public Vacancy(String title, String description, LocalDateTime creationDate, boolean visible, int cityId, int fileId) {
 
         this.title = title;
         this.description = description;
         this.creationDate = creationDate;
+        this.visible = visible;
+        this.cityId = cityId;
+        this.fileId = fileId;
     }
 
-    public Vacancy(int id, String title, String description, LocalDateTime creationDate, boolean visible, int cityId) {
+    public Vacancy(int id, String title, String description, LocalDateTime creationDate, boolean visible, int cityId, int fileId) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.creationDate = creationDate;
         this.visible = visible;
         this.cityId = cityId;
+        this.fileId = fileId;
     }
 
     public Vacancy() {
@@ -81,5 +87,13 @@ public class Vacancy {
 
     public void setCityId(int cityId) {
         this.cityId = cityId;
+    }
+
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
     }
 }
