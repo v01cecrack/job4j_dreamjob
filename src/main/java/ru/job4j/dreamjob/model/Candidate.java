@@ -7,6 +7,7 @@ public class Candidate {
     private String name;
     private String description;
     private LocalDateTime creationDate;
+    private int cityId;
 
     public Candidate(String name, String description, LocalDateTime creationDate) {
         this.name = name;
@@ -14,11 +15,12 @@ public class Candidate {
         this.creationDate = creationDate;
     }
 
-    public Candidate(int id, String name, String description, LocalDateTime creationDate) {
+    public Candidate(int id, String name, String description, LocalDateTime creationDate, int cityId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.creationDate = creationDate;
+        this.cityId = cityId;
     }
 
     public Candidate() {
@@ -55,5 +57,13 @@ public class Candidate {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 }
