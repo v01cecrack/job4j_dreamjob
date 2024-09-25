@@ -15,7 +15,6 @@ public class Sql2oUserRepository implements UserRepository {
         this.sql2o = sql2o;
     }
 
-
     @Override
     public Optional<User> save(User user) {
         try (var connection = sql2o.open()) {
